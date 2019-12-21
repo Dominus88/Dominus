@@ -1,0 +1,41 @@
+# Este programa está hecho basado en el módulo 1 del "MOC" "Python for Data Science". 
+# No cuenta con interacción del usuario. 
+# No cuenta con vectores. 
+# No cuenta con condicionales
+# Por ello, sólo es posible el muestreo de un número fijo dado por defecto...usando palabras.
+Función='0123456789'
+# Efectuamos el muestreo, todavía usando palabras. Introducimos k=2
+k=2
+# Aquí faltaría un bucle del tipo 1<k<10. En realidad hay que pedir al usuario que introduzca el valor de k, en FORTRAN mediante <<READ*,k>>
+Muestra=Función[0::k]
+# Necesitamos añadir ceros a las posiciones no muestreadas ya que a la hora de mostrar en pantalla, si no están definidas todas las posiciones, Python dará error. Esto se evitará más tarde mediante las funciones del tipo “haz hasta”. A día de hoy estamos obligados a forzar la impresión de todos los valores, dando valor nulo a los que no interesan.
+Muestra=Muestra+'0000000000'
+A1=int(Muestra[0])
+B1=int(Muestra[1])
+C1=int(Muestra[2])
+D1=int(Muestra[3])
+E1=int(Muestra[4])
+F1=int(Muestra[5])
+G1=int(Muestra[6])
+H1=int(Muestra[7])
+I1=int(Muestra[8])
+J1=int(Muestra[9])
+print("El valor de su muestra es:")
+print(A1)
+print(B1)
+print(C1)
+print(D1)
+print(E1)
+print(F1)
+print(G1)
+print(H1)
+print(I1)
+print(J1)
+#Aparecerán a la derecha tantos ceros como posiciones no muestreadas.
+print("Debe considerar que los últimos")
+cont=len(Función)
+pulsos=cont/k
+no_muestreados=cont-pulsos
+print(int(no_muestreados))
+print("ceros corresponden a las posiciones no muestreadas.")
+# Fin de programa. Quizá podría plantearse una “contramuestreo” que tome los valores no muestreados por el usuario, para agruparlos al final y que aparezcan en lugar de los ceros.
